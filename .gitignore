@@ -1,0 +1,6 @@
+# DOME files
+DOME-out.log
+dome/dome
+
+# Pycharm Stuff
+.idea/
