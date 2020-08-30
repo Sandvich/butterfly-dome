@@ -4,3 +4,6 @@ dome/dome
 
 # Pycharm Stuff
 .idea/
+
+# Recordings
+*.gif

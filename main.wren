@@ -1,4 +1,5 @@
 import "dome" for Window
+import "graphics" for Canvas
 import "./api" for Fading
 import "./game" for MainScene
 
@@ -9,6 +10,7 @@ class Game {
         Window.title = "Butterfly DOME"
         Window.lockstep = true
         Window.resize(800, 600)
+		Canvas.resize(800, 600)
 
         // Load scenes into a dict
         __scenes = {

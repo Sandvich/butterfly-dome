@@ -10,7 +10,7 @@ class MainScene is Scene {
 		var test = []
 
 		_player = Player.new(this)
-		addCanvasItem(_player, _player.x, _player.y)
+		addTempCanvasItem(_player, _player.x, _player.y)
 
 		draw(0)
 	}
