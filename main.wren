@@ -16,9 +16,7 @@ class Game {
         }
 
         // Initialise the Audio
-        Fading.init({
-        	"testTrack": "testTrack.ogg"
-        })
+        Fading.init({})
 
         // Open the menu
         // loadScene("menu")
