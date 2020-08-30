@@ -9,8 +9,8 @@ class Game {
 	    // DOME setup stuff
         Window.title = "Butterfly DOME"
         Window.lockstep = true
-        Window.resize(800, 600)
-		Canvas.resize(800, 600)
+        Window.resize(1920, 1080)
+		Canvas.resize(1920, 1080)
 
         // Load scenes into a dict
         __scenes = {
