@@ -1,14 +1,16 @@
 import "input" for Mouse
 import "graphics" for Canvas, Color, Point
+import "random" for Random
 
 class Player {
     construct new(parent) {
         _parent = parent
         _loc = Point.new(400,300)
         _velocity = Point.new(0,0)
-        _maxAccel = 3
+        _maxAccel = 5
         _maxVelocity = 30
         _g = Point.new(0, 2)
+        _generator = Random.new()
     }
 
     mouseHandler() {
@@ -16,7 +18,8 @@ class Player {
         if (_accel.length > _maxAccel) {
             _accel = _accel.unit * _maxAccel
         }
-        _velocity = _velocity + _accel + _g
+        var erratic = Point.new(_generator.float(-1,1), _generator.float(-1,1)).unit * _generator.float() * _maxAccel
+        _velocity = _velocity + _accel + _g + erratic
         if (_velocity.length > _maxVelocity) {
             _velocity = _velocity.unit * _maxVelocity
         }
