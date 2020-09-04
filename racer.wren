@@ -26,4 +26,6 @@ class Racer {
     }
 
 	loc { _loc }
+	x { _loc.x }
+	y { _loc.y }
 }

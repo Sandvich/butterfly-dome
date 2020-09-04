@@ -225,3 +225,28 @@ class AnimatedSprite is Sprite {
 		}
 	}
 }
+
+class Maths {
+	static arange(start, stop, size) {
+		var step = (stop-start)/size
+		return range(start, stop, step)
+	}
+
+	static range(stop) {
+		return range(0, stop, 1)
+	}
+
+	static range(start, stop) {
+		return range(start, stop, 1)
+	}
+
+	static range(start, stop, step) {
+		var out = []
+		var i = 0
+		while (i < stop) {
+			out.add(step*i + start)
+			i = i + 1
+		}
+		return out
+	}
+}

@@ -8,18 +8,12 @@ class Player is Racer {
         _parent = parent
     }
 
-    mouseHandler() {
-        move(Point.new(Mouse.x, Mouse.y))
-    }
-
     update() {
+        move(Point.new(Mouse.x, Mouse.y))
         _parent.addTempCanvasItem(this, x, y)
     }
 
     draw(x, y) {
         Canvas.circlefill(x, y, 5, Color.white)
     }
-
-	x { loc.x }
-	y { loc.y }
 }
