@@ -1,6 +1,6 @@
 import "input" for Mouse
 import "graphics" for Canvas, Color, Point
-import "./globalRandom" for Generator
+import "./globals" for Generator
 
 class Racer {
     construct new(x, y) {
