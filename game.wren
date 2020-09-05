@@ -1,3 +1,4 @@
+import "graphics" for Canvas, Color
 import "./api" for Scene, Maths
 import "./player" for Player
 import "./opponents" for AIOpponent

@@ -7,7 +7,7 @@ import "./api" for Maths
 class AIOpponent is Racer {
     construct new(parent, x) {
         _aim = Point.new(x, Generator.int(CanvasHeight))
-        super(x, _aim.y)
+        super(x, _aim.y, Racer.White)
         _parent = parent
     }
 

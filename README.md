@@ -5,7 +5,9 @@ the 2020 Famicase Exhibition.
 
 The game was inspired by the following [entry](https://famicase.com/20/softs/016.html), made by GENIE:
 
-<img src="https://famicase.com/20/softs/016_sample.jpg" alt="Butterfly Dome NES case" width="615">
+<img src="img/butterfly-dome.jpg" alt="Butterfly Dome NES case" width="615">
+
+The butterfly sprites are © 2005-2013 Julien Jorge <julien.jorge@stuff-o-matic.com> - see [OpenGameArt](https://opengameart.org/content/animated-butterfly) for details.
 
 ## Building the Game
 

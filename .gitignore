@@ -8,3 +8,6 @@ dome/dome
 # Recordings
 *.gif
 *.webm
+
+# Other
+img/butterfly/
