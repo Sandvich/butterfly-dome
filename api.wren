@@ -76,7 +76,12 @@ class Scene {
 	// draw loop.
 	// Subclass to create a scene.
 
-	construct init() {}
+	construct init() {
+		_toDraw = []
+		_tempDraw = []
+		_toUpdate = []
+		_bgColour = Color.black
+	}
 
 	static run() {
 		// We use the static function run for all scenes instead of their constructors,
@@ -87,10 +92,12 @@ class Scene {
 
 	update() {
 		_tempDraw = []
+		for (item in _toUpdate) { item.update() }
 	}
 
 	draw(dt) {
 		Canvas.cls()
+		Canvas.rectfill(0, 0, Canvas.width, Canvas.height, _bgColour)
 		for (item in _toDraw) {
 			item[0].draw(item[1].x, item[1].y)
 		}
@@ -99,14 +106,10 @@ class Scene {
 		}
 	}
 
-	setupDrawLoop() {
-		_toDraw = []
-		_tempDraw = []
-	}
-
 	addCanvasItem(item, x, y) { _toDraw.add([item, Point.new(x,y)]) }
 	addTempCanvasItem(item, x, y) { _tempDraw.add([item, Point.new(x,y)]) }
-	clearCanvasItems() { setupDrawLoop() } // Really just a convenience.
+	bgColour=(value) { _bgColour = value }
+	addUpdatedItem(item) { _toUpdate.add(item) }
 
 	mouseHandler() {}
 	keyboardHandler() {}

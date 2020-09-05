@@ -1,4 +1,4 @@
-import "graphics" for Canvas, Color
+import "graphics" for Color
 import "./api" for Scene, Maths
 import "./player" for Player
 import "./opponents" for AIOpponent
@@ -8,26 +8,22 @@ class MainScene is Scene {
 		// Boilerplate, needed for every Scene
 		super()
 		_parent = parent
-		setupDrawLoop()
+		bgColour = Color.white
 
 		// Create the player
 		_player = Player.new(this)
 		addTempCanvasItem(_player, _player.x, _player.y)
+		addUpdatedItem(_player)
 
 		// Create 3 AIs
 		var numOpponents = 3
 		_opponents = []
 		for (i in Maths.range(numOpponents)) {
 			_opponents.add(AIOpponent.new(this, 100))
+			addUpdatedItem(_opponents[-1])
 		}
 
 		draw(0)
-	}
-
-	update() {
-		super()
-		_player.update()
-		for (racer in _opponents) { racer.update() }
 	}
 
 	// Boilerplate + functions
