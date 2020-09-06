@@ -15,16 +15,18 @@ class Config {
 }
 
 class MoveMode {
-    construct new(maxAccel, maxVel, boostMultiplier) {
+    construct new(maxAccel, maxVel, boostMultiplier, maxEnergy) {
         _maxAccel = maxAccel
         _maxVel = maxVel
         _boostMultiplier = boostMultiplier
+        _maxEnergy = maxEnergy
     }
     maxAccel { _maxAccel }
     maxVel { _maxVel }
     maxVelocity { _maxVel }
     boostMultiplier { _boostMultiplier }
+    maxEnergy { _maxEnergy }
 }
 
 Config.init()
-Config.addMoveMode("normal", MoveMode.new(3,15,2))
+Config.addMoveMode("normal", MoveMode.new(3,15,2, 600))

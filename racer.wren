@@ -12,6 +12,7 @@ class Racer {
         _moveMode = Config.getMoveMode("normal")
         _g = Point.new(0, 2)
         _generator = Generator
+        _energyLevel = _moveMode.maxEnergy
         // Animation stuff
         _image = ImageData.loadFromFile(colour)
         _rightFrames = []
@@ -46,9 +47,12 @@ class Racer {
             _frames = _leftFrames
         }
         // And up or down
-        if (_accel.y < _moveMode.maxAccel/5) {
+        if (_accel.y < _moveMode.maxAccel/3) {
             var maxcount = 6
-            if (_accel.y < 0) { maxcount = 2 }
+            if (_accel.y < 0) {
+                maxcount = 2
+                _energyLevel = _energyLevel - 1
+            }
             if (_count >= maxcount) {
                 _currentFrameIndex = _currentFrameIndex + 1
                 if (_currentFrameIndex == 12) { _currentFrameIndex = 0}
@@ -63,6 +67,7 @@ class Racer {
                 _currentFrameIndex = 2
                 _count = 0
             }
+            _energyLevel = _energyLevel + 2
         }
     }
 
@@ -73,6 +78,8 @@ class Racer {
 	loc { _loc }
 	x { _loc.x }
 	y { _loc.y }
+    energyLevel { _energyLevel }
+    maxEnergyLevel { _moveMode.maxEnergy }
 
     static Blue { "img/butterfly-blue-sheet.png" }
     static Green { "img/butterfly-green-sheet.png" }
