@@ -2,7 +2,7 @@ import "dome" for Window
 import "graphics" for Canvas
 import "./api" for Fading
 import "./game" for MainScene
-import "./globals" for CanvasWidth, CanvasHeight
+import "./globals" for Config
 
 class Game {
 
@@ -10,8 +10,8 @@ class Game {
 	    // DOME setup stuff
         Window.title = "Butterfly DOME"
         Window.lockstep = true
-        Window.resize(CanvasWidth, CanvasHeight)
-		Canvas.resize(CanvasWidth, CanvasHeight)
+		Canvas.resize(Config.width, Config.height)
+        Window.resize(Canvas.width, Canvas.height)
 
         // Load scenes into a dict
         __scenes = {
