@@ -32,7 +32,9 @@ class Racer {
             _accel = _accel.unit * _moveMode.maxAccel
         }
         var erratic = Point.new(_generator.float(-1,1), _generator.float(-1,1)).unit * _generator.float() * _moveMode.maxAccel
-        _velocity = _velocity + _accel + _g + erratic
+        var work = erratic + _accel
+        if ((_energyLevel <= 0) && work.x > 0) { work.x = 0 }
+        _velocity = _velocity + _g + work
         if (_velocity.length > _moveMode.maxVel) {
             _velocity = _velocity.unit * _moveMode.maxVel
         }
